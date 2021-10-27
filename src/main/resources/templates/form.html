@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>お問い合わせ</title>
+    <meta name="description" content="＃">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<div id="contact" class="big-bg">
+    <header class="page-header wrapper">
+        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="ホーム"></a></h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="news.html">News</a></li>
+                <li><a href="profile.html">Plofile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <h2 class="page-title">Contact　Form</h2>
+    <form action="#" th:action="@{/form/result}" th:object="${form}" method="post">
+        <p>Name: <input type="text" th:field="*{name}"/></p>
+        <p>Email: <input type="text" th:field="*{email}"/></p>
+        <p>Message: <input type="text" th:field="*{message}"/></p>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+    </div><!-- /.wrapper -->
+</div><!-- /#contact -->
+
+<footer>
+    <div class="wrapper">
+        <p><small>&copy; 2019 Manabox</small></p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Form List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1>List</h1>
+<div>
+    <div th:each="contact : ${contacts}">
+        <p th:text="'Name: ' + ${contactdata['name']}"></p>
+        <p th:text="'Email: ' + ${contactdata['email']}"></p>
+        <p th:text="'Message: ' + ${contactdata['message']}"></p>
+        <hr>
+    </div>
+</div>
+</body>
+</html>
