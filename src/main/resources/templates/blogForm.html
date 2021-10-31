@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Blog</title>
+    <meta name="description" content="＃">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<body>
+<div id="blog" class="big-bg">
+    <div class="wrapper">
+        <h2 class="page-title">Contact　Form</h2>
+        <form action="#" th:action="@{/blogForm/blogResult}" th:object="${blogForm}" method="post">
+            <p>Thema: <input type="text" th:field="*{thema}"/></p>
+            <p>Matter: <input type="text" th:field="*{matter}"/></p>
+            <p><input type="submit" value="Submit"/></p>
+        </form>
+    </div><!-- /.wrapper -->
+</div><!-- /#contact -->
+
+<footer>
+    <div class="wrapper">
+        <p><small>&copy; 2019 Manabox</small></p>
+    </div>
+</footer>
+</body>
+</html>

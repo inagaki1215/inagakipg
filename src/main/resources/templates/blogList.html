@@ -7,10 +7,9 @@
 <body>
 <h1>List</h1>
 <div>
-    <div th:each="contact : ${contactsData}">
-        <p th:text="'Name: ' + ${contact['name']}"></p>
-        <p th:text="'Email: ' + ${contact['email']}"></p>
-        <p th:text="'Message: ' + ${contact['message']}"></p>
+    <div th:each="blogContents : ${BlogContentData}">
+        <p th:text="'Thema: ' + ${blogContents['thama']}"></p>
+        <p th:text="'Matter: ' + ${blogContents['matter']}"></p>
         <hr>
     </div>
 </div>
