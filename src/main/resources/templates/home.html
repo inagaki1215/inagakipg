@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ブログ</title>
+    <meta name="description" content="勉強したことや経験のブログ">
+    <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="home" class="big-bg">
+    <header class="page-header wrapper">
+        <h1><a href="index.html"><img class="logo" src="#" alt="home"></a></h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a th:href="@{/profile.html}">Profile</a></li>
+                <li><a th:href="@{/blogIndex.html}">Blog</a></li>
+                <li><a th:href="@{/form}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <div class="home-content wrapper">
+        <h2 class="page-title">Life is what you make of</h2>
+    </div>
+</div>
+</body>
+</html>

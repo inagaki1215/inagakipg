@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="ja">
+<html lang="ja" xmlns="http://www.w3.org/1999/html">
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <title>Blog</title>
@@ -12,8 +12,11 @@
     <div class="wrapper">
         <h2 class="page-title">Contact　Form</h2>
         <form action="#" th:action="@{/blogForm/blogResult}" th:object="${blogForm}" method="post">
+            <p>hizuke: <input type="text" th:field="*{hizuke}"/></p>
             <p>Thema: <input type="text" th:field="*{thema}"/></p>
-            <p>Matter: <input type="text" th:field="*{matter}"/></p>
+
+            <p>Matter: <textarea type="text" th:field="*{matter}"/></textarea></p>
+
             <p><input type="submit" value="Submit"/></p>
         </form>
     </div><!-- /.wrapper -->

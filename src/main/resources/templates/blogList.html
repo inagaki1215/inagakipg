@@ -8,8 +8,13 @@
 <h1>List</h1>
 <div>
     <div th:each="blogContents : ${BlogContentData}">
-        <p th:text="'Thema: ' + ${blogContents['thama']}"></p>
+        <p th:text="'Hizuke: ' + ${blogContents['hizuke']}"></p>
+        <p th:text="'Thema: ' + ${blogContents['thema']}"></p>
         <p th:text="'Matter: ' + ${blogContents['matter']}"></p>
+
+
+        <h1 th:text="${hizukeRezult}"></h1>
+
         <hr>
     </div>
 </div>

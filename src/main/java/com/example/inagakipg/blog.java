@@ -3,6 +3,7 @@ package com.example.inagakipg;
 public class blog {
     private String thema;
     private String matter;
+    private String hizuke;
 
 
     public String getThema() {
@@ -17,6 +18,13 @@ public class blog {
     }
     public void setMatter(String matter) {
         this.matter = matter;
+    }
+
+    public String getHizuke() {
+        return hizuke;
+    }
+    public void setHizuke(String hizuke) {
+        this.hizuke = hizuke;
     }
 
 

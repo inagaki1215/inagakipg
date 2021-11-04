@@ -1,0 +1,192 @@
+@charset "UTF-8";
+
+html{
+    font-size: 100%;
+}
+
+body{
+    font-family: "Yu Gothic Medium", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: #432;
+    margin: 0;
+    padding: 0;
+}
+
+/*棒線をなくす*/
+a{
+    text-decoration: none;
+
+}
+
+/*画面の幅で表示*/
+img{
+    max-width: 100%
+}
+
+.logo{
+    width: 210px;
+    margin-top: 14px;
+}
+
+.main-nav{
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+
+.main-nav li{
+    margin-left: 36px;
+}
+
+.main-nav a{
+    color: #432;
+}
+
+.main-nav a:hover{
+    color: #0bd;
+}
+
+.page-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%
+}
+
+.home-content{
+    text-align: center;
+    margin-top: 10%;
+}
+
+.home-content p{
+    font-size: 1.125rem;
+    margin: 10px 0 42px;
+}
+
+.page-title{
+    font-size: 5rem;
+    font-family: "Philosopher", serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.button{
+    font-size: 1.375rem;
+    background: #0bd;
+    color: #fff;
+    border-radius: 5px;
+    padding: 18px 32px;
+}
+
+.button:hover {
+    background: #0090aa;
+}
+
+/* 大きな背景画像 */
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+}
+
+
+#home{
+    background-image: url(/main.jpeg);
+    min-height: 100vh;
+}
+
+
+#home .page-title{
+    text-transform: none;
+}
+
+/*form*/
+/* CONTACT
+------------------------------------------------*/
+#contact {
+    background-image: url(/contact-bg.jpg);
+    min-height: 100vh;
+}
+
+/* フォーム */
+form div {
+    margin-bottom: 14px;
+}
+label {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    background: rgba(255,255,255,.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    max-width: 240px;
+}
+textarea {
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+
+
+/* サイドバー */
+aside {
+    width: 22%;
+}
+.sub-menu {
+    margin-bottom: 60px;
+    list-style: none;
+}
+.sub-menu li {
+    border-bottom: 1px #ddd solid;
+}
+.sub-menu a {
+    color: #432;
+    padding: 10px;
+    display: block;
+}
+.sub-menu a:hover {
+    color: #0bd;
+}
+aside p {
+    padding: 12px 10px;
+}
+
+
+
+.container{
+    background-color:red;
+}
+
+
+.header-container{
+    background-color:pink;
+}
+
+.header-container-in-up{
+     background-color:green;
+}
+
+.header-container-in-down{
+     background-color:blue;
+}

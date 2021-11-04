@@ -18,6 +18,9 @@ import javax.xml.namespace.QName;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.JOptionPane;
+
+
 @Controller
 public class MyController {
 //    jdbcTemplate変数、 @AutowiredあるおかげでjdbcTemplate変数にインスタンスが入る
@@ -27,7 +30,7 @@ public class MyController {
 
     @GetMapping("/")
     public String getIndex() {
-        return "index";
+        return "home";
     }
 
 
@@ -40,13 +43,13 @@ public class MyController {
 
     @PostMapping("/form/result")
     public String getFormResult(@ModelAttribute ContactForm form, Model model) {
-        if (name.isEmpty()) {
+        if (form.getName().isEmpty()) {
             model.addAttribute("coment", "名前を入力してください");
             return "contactError";
-        } else if (email.isEmpty()) {
+        } else if (form.getEmail().isEmpty()) {
             model.addAttribute("coment", "アドレスをを入力してください");
             return "contactError";
-        } else if (message.isEmpty()) {
+        } else if (form.getMessage().isEmpty()) {
             model.addAttribute("coment", "内容をを入力してください");
             return "contactError";
         } else {
@@ -78,7 +81,7 @@ public String getBlogForm(Model model) {
     @PostMapping("/blogForm/blogResult")
     public String getBlogFormResult(@ModelAttribute blog blogForm, Model model) {
         model.addAttribute("blogForm", blogForm);
-        jdbcTemplate.update("INSERT INTO blogdata(thema,matter) Values(?,?)",blogForm.getThema(), blogForm.getMatter());
+        jdbcTemplate.update("INSERT INTO blogdata(thema,matter,hizuke) Values(?,?,?)",blogForm.getThema(), blogForm.getMatter(),blogForm.getHizuke());
         return "blogResult";
     }
 
@@ -89,6 +92,14 @@ public String getBlogForm(Model model) {
         model.addAttribute("BlogContentData", blog);
         return "blogList";
     }
+
+
+    @GetMapping("/bloglist/{hizuke}")
+    public String getBlogHizuke(@PathVariable("hizuke") String hizuke, Model model) {
+        List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select * from blogdata where hizuke = #{hizuke}");
+        model.addAttribute("hizukeRezult", selectHizuke);
+        return "blogList";
+        }
 
 }
 
