@@ -10,12 +10,13 @@
 <body>
 <div id="home" class="big-bg">
     <header class="page-header wrapper">
-        <h1><a href="index.html"><img class="logo" src="#" alt="home"></a></h1>
+        <h1><a th:href="@{/home}"><img class="logo" src="#" alt="home"></a></h1>
         <nav>
             <ul class="main-nav">
-                <li><a th:href="@{/profile.html}">Profile</a></li>
-                <li><a th:href="@{/blogIndex.html}">Blog</a></li>
-                <li><a th:href="@{/form}">Contact</a></li>
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li><a th:href="@{/blogList}">Blog</a></li>
+                <li><a th:href="@{/contactForm}">Contact</a></li>
             </ul>
         </nav>
     </header>

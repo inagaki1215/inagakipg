@@ -28,34 +28,44 @@ public class MyController {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    @GetMapping("/")
+    @GetMapping("/home")
     public String getIndex() {
         return "home";
     }
 
+    @GetMapping("/profile")
+    public String getProfile() {
+        return "profile";
+    }
 
-    @GetMapping("/form")
+    @GetMapping("/contactForm")
     public String getForm(Model model) {
-        model.addAttribute("form", new ContactForm());
-        return "form";
+        model.addAttribute("contactForm", new ContactForm());
+        return "contactForm";
+    }
+
+    @GetMapping("/blogList")
+    public String getBlogList(Model model) {
+        model.addAttribute("blogList", new blog());
+        return "blogList";
     }
 
 
-    @PostMapping("/form/result")
-    public String getFormResult(@ModelAttribute ContactForm form, Model model) {
-        if (form.getName().isEmpty()) {
+    @PostMapping("/contactForm/result")
+    public String getFormResult(@ModelAttribute ContactForm contactForm, Model model) {
+        if (contactForm.getName().isEmpty()) {
             model.addAttribute("coment", "名前を入力してください");
             return "contactError";
-        } else if (form.getEmail().isEmpty()) {
+        } else if (contactForm.getEmail().isEmpty()) {
             model.addAttribute("coment", "アドレスをを入力してください");
             return "contactError";
-        } else if (form.getMessage().isEmpty()) {
+        } else if (contactForm.getMessage().isEmpty()) {
             model.addAttribute("coment", "内容をを入力してください");
             return "contactError";
         } else {
-            model.addAttribute("form", form);
-            jdbcTemplate.update("INSERT INTO contactdata(name,email,message) Values(?,?,?)", form.getName(), form.getEmail(), form.getMessage());
-            return "result";
+            model.addAttribute("contactForm", contactForm);
+            jdbcTemplate.update("INSERT INTO contactdata(name,email,message) Values(?,?,?)", contactForm.getName(), contactForm.getEmail(), contactForm.getMessage());
+            return "contactResult";
         }
 
     }
@@ -63,18 +73,18 @@ public class MyController {
 
 
 
-    @GetMapping("/form/list")
+    @GetMapping("/contactForm/contactList")
     public String getFormList(Model model) {
         List<Map<String, Object>> contacts = jdbcTemplate.queryForList("select * from contactdata");
         model.addAttribute("contactsData", contacts);
-        return "list";
+        return "contactList";
     }
 
 //    blog
-@GetMapping("/blogForm")
-public String getBlogForm(Model model) {
-    model.addAttribute("blogForm", new blog());
-    return "blogForm";
+    @GetMapping("/blogForm")
+    public String getBlogForm(Model model) {
+        model.addAttribute("blogForm", new blog());
+        return "blogForm";
 }
 
 

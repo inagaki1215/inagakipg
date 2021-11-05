@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html lang="ja" xmlns="http://www.w3.org/1999/html">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>お問い合わせ</title>
+    <meta name="description" content="＃">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="contact" class="big-bg">
+    <header class="page-header wrapper">
+        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="Home"></a></h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a href="plofile.html">Plofile</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <h2 class="page-title">Thank you</h2>
+
+            <p>
+            <div>
+                <label for="name">Name</label>
+                <p type="text" id="name" name="your-name" th:text="${form.name}"></p>
+            </div>
+
+            <div>
+                <label for="email">Mail</label>
+                <p type="email" id="email" name="your-email" th:text="${form.email}"></p>
+            </div>
+
+            <div>
+                <label for="message">Message</label>
+                <p id="message" name="your-message" th:text="${form.message}"></p>
+            </div>
+            </p>
+
+
+    </div><!-- /.wrapper -->
+</div><!-- /#contact -->
+
+<footer>
+    <div class="wrapper">
+        <p><small>&copy; 2019 Manabox</small></p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+<div id="sidebar" class="sidbar-big">
+        <aside id="category" class="category-big">
+            <h3 class="sub-title">カテゴリー</h3>
+            <ul>
+                <li class="category-one"><a href="#">intelliJ</a></li>
+                <li class="category-twe"><a href="#">github</a></li>
+                <li class="category-three"><a href="#">html</a></li>
+                <li class="category-four"><a href="#">java</a></li>
+            </ul>
+
+            <h3 class="sub-title">アーカイブ</h3>
+
+        </aside>
+     </div>
+    </div>
+   </div>
+  </div>
+</body>
+</html>
+
+
+<!--<h1>Thank you!!</h1>-->
+<!--<p th:text="'Name: ' + ${form.name}"></p>-->
+<!--<p th:text="'Email: ' + ${form.email}"></p>-->
+<!--<p th:text="'Message: ' + ${form.message}"></p>-->
+
+
+
+

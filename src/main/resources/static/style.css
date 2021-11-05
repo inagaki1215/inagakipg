@@ -147,46 +147,142 @@ input[type="submit"] {
     line-height: 1;
 }
 
+/* blog
+------------------------------- */
+#blog {
+    background-image: url(/blog.jpeg);
+    height: 270px;
+    margin-bottom: 40px;
+}
+#blog .page-title {
+    text-align: center;
+}
 
+/* フッター
+------------------------------- */
+footer{
+    background:#432;
+    text-align: center;
+    padding: 26px 0;
+    margin-top: 50px;
+}
+
+footer p{
+    color: #fff;
+    font-size: 0.875rem;
+}
+
+/* 記事部分 */
+article {
+    width: 74%;
+}
 
 /* サイドバー */
 aside {
     width: 22%;
 }
-.sub-menu {
+
+.news-contents {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 70px;
+}
+
+.post-info{
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 40px;
+}
+
+.post-date{
+    background: #0bd;
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    font-size: 1.625rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+}
+
+
+.post-date span{
+    font-size: 1rem;
+    border-top: 1px rgba(255,255,255,.5) solid;
+    padding-top: 6px;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.post-title{
+    font-family: "Yu Mincho", "Yumincho", serif;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.post-title,
+.post-cat{
+    margin-left: 120px;
+}
+
+article img{
+    margin-bottom: 20px;
+}
+
+article p{
+    margin-bottom: 1rem;
+}
+
+.sub-title{
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    font-weight: normal;
+}
+
+aside p{
+    padding: 12px 10px;
+}
+
+.sub-menu{
     margin-bottom: 60px;
     list-style: none;
 }
-.sub-menu li {
+
+.sub-menu li{
     border-bottom: 1px #ddd solid;
 }
-.sub-menu a {
+
+.sub-menu a{
     color: #432;
     padding: 10px;
     display: block;
 }
-.sub-menu a:hover {
+
+.sub-menu a:hover{
     color: #0bd;
 }
-aside p {
-    padding: 12px 10px;
+
+
+article{
+    width: 60%;
+    order: 2;
 }
 
-
-
-.container{
-    background-color:red;
+aside{
+    width: 22%;
+    order:3;
 }
 
-
-.header-container{
-    background-color:pink;
+.ad{
+    order:1;
 }
 
-.header-container-in-up{
-     background-color:green;
-}
-
-.header-container-in-down{
-     background-color:blue;
+@media (max-width:600px){
+    h1 {
+        color: #0bd;
+    }
 }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Blog</title>
+    <meta name="description" content="#">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
+    <!--CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleaps.com/css?family=Philosopher" rel="stylesheet">
+    <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+</head>
+<body>
+<div id="blog" class="big-bg">
+    <header class="page-header wrapper">
+        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェフォーム"></a></h1>
+        <nav>
+            <ul class="main-nav">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li><a th:href="@{/blogList}">Blog</a></li>
+                <li><a th:href="@{/contactForm}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrapper">
+        <h2 class="page-title">Profile</h2>
+    </div>
+
+</div>
+
+<div class="news-contents wrapper">
+    <article>
+        <img src="profileMain.jpeg" alt="プロフィール">
+        <h1 class="profileTitle">About</h1>
+        <p>Satomi</p>
+        <p>神奈川県出身</p>
+        <h1 class="profileTitle">Work</h1>
+        <p>〜診療放射線技師〜</p>
+        <p>総合病院にて３年間勤務後、フリーにて活動中です。</p>
+        <p>主にレントゲン撮影、CT撮影、マンモグラフィーの経験があります。</p>
+        <p>〜エンジニア〜</p>
+        <p>2022年よりSESとして都内に勤務しています。将来は、医療分野での経験を活かしたアプリケーション開発をしたいと思っています。</p>
+        <h1 class="profileTitle">Hobby</h1>
+        <p>〜ニューヨーク〜</p>
+        <p>人生を変えてくれたパワースポットです。詳しくは<a href="blog.html">ブログ</a>まで。</p>
+        <p>〜ソフトボール(野球)〜</p>
+        <p>中学時代にソフトボール部に所属していました。今は社会人チームでキャッチャーとしてプレーしています。野球も好きで、甲子園、プロ野球、メジャーリーグまで観戦しにいきます。詳しくは<a href="blog.html">ブログ</a>まで</p>
+        </p>
+    </article>
+
+    <aside>
+        <h3 class="sub-title">カテゴリー</h3>
+        <ul class="sub-menu">
+            <li><a href="#">intelliJ</a></li>
+            <li><a href="#">Spring Initializr</a></li>
+            <li><a href="#">Soercetree</a></li>
+            <li><a href="#">github</a></li>
+        </ul>
+
+        <h3 class="sub-title">アーカイブ</h3>
+        <ul class="sub-menu">
+            <li><a href="#">2021/11 (1)</a></li>
+            <li><a href="#">2021/12 (1)</a></li>
+            <li><a href="#">2022/1 (1)</a></li>
+            <li><a href="#">2021/2 (1)</a></li>
+            <li><a href="#">2021/3 (1)</a></li>
+            <li><a href="#">2021/4 (1)</a></li>
+        </ul>
+    </aside>
+
+    <!-- <div class="ad">
+        <img src="images/banner.jpg" alt="新メニュー登場">
+    </div> -->
+</div>
+
+
+
+<footer>
+    <div class="wrapper">
+        <p><small>&copy; 2019 Manabox</small></p>
+    </div>
+</footer>
+</body>
+</html>
+
+
+
+<!-- <img class="profile-image" src="images/profile.jpeg">
+<img class="pcWork-image" src="images/work.png">
+<img class="medicalWork-image" src="images/medical.png">
+<img class="newyork-image" src="images/nyc.jpeg">
+<img class="softball-image" src="images/softball.jpeg">
+<img class="mlb-image" src="images/mlb.jpeg"> -->
+
+
+
+
+</div>
+</div>
+</main>
+</body>
+</html>
