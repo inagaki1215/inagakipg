@@ -4,6 +4,7 @@ package com.example.inagakipg;
 import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.context.annotation.EnableMBeanExport;
 import org.springframework.web.bind.annotation.*;
+
 import java.applet.Applet;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ import javax.swing.JOptionPane;
 
 @Controller
 public class MyController {
-//    jdbcTemplate変数、 @AutowiredあるおかげでjdbcTemplate変数にインスタンスが入る
+    //    jdbcTemplate変数、 @AutowiredあるおかげでjdbcTemplate変数にインスタンスが入る
 //    JdbcTemplate jdbcTemplate = new JdbcTemplate();
     @Autowired
     JdbcTemplate jdbcTemplate;
@@ -43,15 +44,14 @@ public class MyController {
         model.addAttribute("contactForm", new ContactForm());
         return "contactForm";
     }
-
-    @GetMapping("/blogList")
-    public String getBlogList(Model model) {
-        model.addAttribute("blogList", new blog());
-        return "blogList";
-    }
+//    @GetMapping("/bloglist")
+//    public String getBlogList() {
+//        return "blogList";
+//    }
 
 
-    @PostMapping("/contactForm/result")
+
+    @PostMapping("/contactForm/contactResult")
     public String getFormResult(@ModelAttribute ContactForm contactForm, Model model) {
         if (contactForm.getName().isEmpty()) {
             model.addAttribute("coment", "名前を入力してください");
@@ -71,8 +71,6 @@ public class MyController {
     }
 
 
-
-
     @GetMapping("/contactForm/contactList")
     public String getFormList(Model model) {
         List<Map<String, Object>> contacts = jdbcTemplate.queryForList("select * from contactdata");
@@ -80,23 +78,22 @@ public class MyController {
         return "contactList";
     }
 
-//    blog
+    //    blog
     @GetMapping("/blogForm")
     public String getBlogForm(Model model) {
         model.addAttribute("blogForm", new blog());
         return "blogForm";
-}
+    }
 
 
     @PostMapping("/blogForm/blogResult")
     public String getBlogFormResult(@ModelAttribute blog blogForm, Model model) {
         model.addAttribute("blogForm", blogForm);
-        jdbcTemplate.update("INSERT INTO blogdata(thema,matter,hizuke) Values(?,?,?)",blogForm.getThema(), blogForm.getMatter(),blogForm.getHizuke());
+        jdbcTemplate.update("INSERT INTO blogdata(thema,matter,hizuke) Values(?,?,?)", blogForm.getThema(), blogForm.getMatter(), blogForm.getHizuke());
         return "blogResult";
     }
 
-
-    @GetMapping("/blogForm/blogList")
+    @GetMapping("/bloglist")
     public String getBlogFormList(Model model) {
         List<Map<String, Object>> blog = jdbcTemplate.queryForList("select * from blogdata");
         model.addAttribute("BlogContentData", blog);
@@ -106,13 +103,25 @@ public class MyController {
 
     @GetMapping("/bloglist/{hizuke}")
     public String getBlogHizuke(@PathVariable("hizuke") String hizuke, Model model) {
-        List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select * from blogdata where hizuke = #{hizuke}");
-        model.addAttribute("hizukeRezult", selectHizuke);
-        return "blogList";
+        List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select * from blogdata where hizuke = ?", hizuke);
+        if(selectHizuke.size() == 1){
+            model.addAttribute("BlogContentData", selectHizuke);
+            return "bloghizuke";
+        }else {
+            return "notfound";
         }
 
-}
+    }
 
+
+//    @GetMapping("/bloglist/{hizuke}")
+//    public String getBlogHizuke(@PathVariable("hizuke") String hizuke, Model model) {
+//        List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select * from blogdata where hizuke %#{hizuke}%");
+//        model.addAttribute("hizukeRezult", selectHizuke);
+//        return "blogList";
+//        }
+
+}
 
 
 //    @PostMapping("/form/result")

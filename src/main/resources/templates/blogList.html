@@ -10,18 +10,18 @@
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link href="https://fonts.googleaps.com/css?family=Philosopher" rel="stylesheet">
     <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
-    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="icon" href="images/favicon.png" type="image/png"/>
 
 </head>
 <body>
 <div id="blog" class="big-bg">
     <header class="page-header wrapper">
-        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="WCBカフェフォーム"></a></h1>
+        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="home"></a></h1>
         <nav>
             <ul class="main-nav">
                 <li><a th:href="@{/home}">Home</a></li>
                 <li><a th:href="@{/profile}">Profile</a></li>
-                <li><a th:href="@{/blogList}">Blog</a></li>
+                <li><a th:href="@{/bloglist}">Blog</a></li>
                 <li><a th:href="@{/contactForm}">Contact</a></li>
             </ul>
         </nav>
@@ -33,32 +33,73 @@
 </div>
 
 <div class="news-contents wrapper">
-    <article>
-        <header class="post-info">
-            <h2 class="post-title">intelliJ でのHTML 、CSS、画像、javaファイルの作成場所</h2>
-            <p class="post-date">3/30<span>2019</span></p>
-        </header>
-        <div th:each="blogContents : ${BlogContentData}">
-            <p th:text="'Hizuke: ' + ${blogContents['hizuke']}"></p>
-            <p th:text="'Thema: ' + ${blogContents['thema']}"></p>
-            <p th:text="'Matter: ' + ${blogContents['matter']}"></p>
+    <div class="b">
+        <article>
+            <header class="post-info">
+                <a class="post-title" th:href="@{/#}">タイトル</a>
+                <p class="post-date">3/30<span>2020</span></p>
+            </header>
+            <div>
+                <p>一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容</p>
+            </div>
+
+            <div class="under-footer">
+            </div>
+<!--                    <div th:each="blogContents : ${BlogContentData}">-->
+<!--                        <p th:text="'Hizuke: ' + ${blogContents['hizuke']}"></p>-->
+<!--                        <p th:text="'Thema: ' + ${blogContents['thema']}"></p>-->
+<!--                        <p th:text="'Matter: ' + ${blogContents['matter']}"></p>-->
+
+<!--                    </div>-->
+
+        </article>
 
 
-            <h1 th:text="${hizukeRezult}"></h1>
-        </div>
-        <p>
-            intelliJを使用して開発するのフォルダの保存場所をまとめました。
-        </p>
-        <p>・HTML</p>
-        <p>src/main/resources/templates/</p>
-        <p>・CSS、画像</p>
-        <p>src/main/resources/static/</p>
-        <p>・java</p>
-        <p>src/main/java/com/example/example/</p>
+        <article>
+            <header class="post-info">
+                <a class="post-title" th:href="@{/#}">タイトル</a>
+                <p class="post-date">3/30<span>2020</span></p>
+            </header>
+            <div>
+                <p>一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容</p>
+            </div>
 
-        </p>
-        <img src="images/place.png" alt="フォルダの場所">
-    </article>
+            <div class="under-footer">
+            </div>
+            <!--        <div th:each="blogContents : ${BlogContentData}">-->
+            <!--            <p th:text="'Hizuke: ' + ${blogContents['hizuke']}"></p>-->
+            <!--            <p th:text="'Thema: ' + ${blogContents['thema']}"></p>-->
+            <!--            <p th:text="'Matter: ' + ${blogContents['matter']}"></p>-->
+
+
+            <!--            <h1 th:text="${hizukeRezult}"></h1>-->
+            <!--        </div>-->
+
+        </article>
+
+        <article>
+            <header class="post-info">
+                <a class="post-title" th:href="@{/#}">タイトル</a>
+                <p class="post-date">3/30<span>2020</span></p>
+            </header>
+            <div>
+                <p>一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容一部内容</p>
+            </div>
+
+            <div class="under-footer">
+            </div>
+            <!--        <div th:each="blogContents : ${BlogContentData}">-->
+            <!--            <p th:text="'Hizuke: ' + ${blogContents['hizuke']}"></p>-->
+            <!--            <p th:text="'Thema: ' + ${blogContents['thema']}"></p>-->
+            <!--            <p th:text="'Matter: ' + ${blogContents['matter']}"></p>-->
+
+
+            <!--            <h1 th:text="${hizukeRezult}"></h1>-->
+            <!--        </div>-->
+
+        </article>
+
+    </div>
 
     <aside>
         <h3 class="sub-title">カテゴリー</h3>
@@ -86,7 +127,6 @@
 </div>
 
 
-
 <footer>
     <div class="wrapper">
         <p><small>&copy; 2019 Manabox</small></p>
@@ -94,7 +134,6 @@
 </footer>
 </body>
 </html>
-
 
 
 <!--<body>-->
@@ -110,4 +149,4 @@
 <!--    </div>-->
 <!--</div>-->
 <!--</body>-->
-<!--</html>-->
+<!-- </html>-->

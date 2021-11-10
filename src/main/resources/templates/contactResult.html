@@ -11,12 +11,13 @@
 <body>
 <div id="contact" class="big-bg">
     <header class="page-header wrapper">
-        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="Home"></a></h1>
+        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="ブログ名"></a></h1>
         <nav>
             <ul class="main-nav">
-                <li><a href="plofile.html">Plofile</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+                <li><a th:href="@{/bloglist}">Blog</a></li>
+                <li><a th:href="@{/contactForm}">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -27,17 +28,17 @@
             <p>
             <div>
                 <label for="name">Name</label>
-                <p type="text" id="name" name="your-name" th:text="${form.name}"></p>
+                <p type="text" id="name" name="your-name" th:text="${contactForm.name}"></p>
             </div>
 
             <div>
                 <label for="email">Mail</label>
-                <p type="email" id="email" name="your-email" th:text="${form.email}"></p>
+                <p type="email" id="email" name="your-email" th:text="${contactForm.email}"></p>
             </div>
 
             <div>
                 <label for="message">Message</label>
-                <p id="message" name="your-message" th:text="${form.message}"></p>
+                <p id="message" name="your-message" th:text="${contactForm.message}"></p>
             </div>
             </p>
 
@@ -50,27 +51,6 @@
         <p><small>&copy; 2019 Manabox</small></p>
     </div>
 </footer>
-</body>
-</html>
-
-
-<div id="sidebar" class="sidbar-big">
-        <aside id="category" class="category-big">
-            <h3 class="sub-title">カテゴリー</h3>
-            <ul>
-                <li class="category-one"><a href="#">intelliJ</a></li>
-                <li class="category-twe"><a href="#">github</a></li>
-                <li class="category-three"><a href="#">html</a></li>
-                <li class="category-four"><a href="#">java</a></li>
-            </ul>
-
-            <h3 class="sub-title">アーカイブ</h3>
-
-        </aside>
-     </div>
-    </div>
-   </div>
-  </div>
 </body>
 </html>
 

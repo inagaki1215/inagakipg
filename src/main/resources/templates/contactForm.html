@@ -11,21 +11,21 @@
 <body>
 <div id="contact" class="big-bg">
     <header class="page-header wrapper">
-        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="Home"></a></h1>
+        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="ブログ名"></a></h1>
         <nav>
             <ul class="main-nav">
                 <li><a th:href="@{/home}">Home</a></li>
                 <li><a th:href="@{/profile}">Profile</a></li>
-                <li><a th:href="@{/blogList}">Blog</a></li>
+                <li><a th:href="@{/bloglist}">Blog</a></li>
                 <li><a th:href="@{/contactForm}">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="wrapper">
-        <h2 class="page-title">Contact</h2>
+        <h2 class="contact-page-title">Contact</h2>
 
-    <form action="#" th:action="@{/form/result}" th:object="${form}" method="post">
+    <form action="#" th:action="@{/contactForm/contactResult}" th:object="${contactForm}" method="post">
         <p>
             <div>
                 <label for="name">Name</label>

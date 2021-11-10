@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<html lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <title>Blog</title>
+  <meta name="description" content="#">
+  <meta name="viewport" content="width=device-width, inital-scale=1">
+  <!--CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link href="https://fonts.googleaps.com/css?family=Philosopher" rel="stylesheet">
+  <link th:href="@{/style.css}" rel="stylesheet" type="text/css">
+  <link rel="icon" href="images/favicon.png" type="image/png"/>
+
+</head>
+<body>
+<div id="blog" class="big-bg">
+  <header class="page-header wrapper">
+    <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="home"></a></h1>
+    <nav>
+      <ul class="main-nav">
+        <li><a th:href="@{/home}">Home</a></li>
+        <li><a th:href="@{/profile}">Profile</a></li>
+        <li><a th:href="@{/bloglist}">Blog</a></li>
+        <li><a th:href="@{/contactForm}">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="wrapper">
+    <h2 class="page-title">Blog</h2>
+  </div>
+
+</div>
+
+<div class="news-contents wrapper">
+
+    <article th:each="blogContents : ${BlogContentData}">
+      <header class="post-info" >
+        <p class="post-title" th:text="${blogContents['thema']}"></p>
+        <p class="post-date">3/30<span>2020</span></p>
+      </header>
+      <div>
+        <p th:text="${blogContents['hizuke']}"></p>
+      </div>
+      <div>
+        <p th:text="${blogContents['matter']}"></p>
+      </div>
+
+      <div class="under-footer">
+      </div>
+
+    </article>
+
+
+  <aside>
+    <h3 class="sub-title">カテゴリー</h3>
+    <ul class="sub-menu">
+      <li><a href="#">intelliJ</a></li>
+      <li><a href="#">Spring Initializr</a></li>
+      <li><a href="#">Soercetree</a></li>
+      <li><a href="#">github</a></li>
+    </ul>
+
+    <h3 class="sub-title">アーカイブ</h3>
+    <ul class="sub-menu">
+      <li><a href="#">2021/11 (1)</a></li>
+      <li><a href="#">2021/12 (1)</a></li>
+      <li><a href="#">2022/1 (1)</a></li>
+      <li><a href="#">2021/2 (1)</a></li>
+      <li><a href="#">2021/3 (1)</a></li>
+      <li><a href="#">2021/4 (1)</a></li>
+    </ul>
+  </aside>
+
+  <!-- <div class="ad">
+      <img src="images/banner.jpg" alt="新メニュー登場">
+  </div> -->
+</div>
+
+
+<footer>
+  <div class="wrapper">
+    <p><small>&copy; 2019 Manabox</small></p>
+  </div>
+</footer>
+</body>
+</html>
+
+
+<!--<body>-->
+<!--<h1>List</h1>-->
+<!--<div>-->
+<!--    <div th:each="blogContents : ${BlogContentData}">-->
+<!--        <p th:text="'Hizuke: ' + ${blogContents['hizuke']}"></p>-->
+<!--        <p th:text="'Thema: ' + ${blogContents['thema']}"></p>-->
+<!--        <p th:text="'Matter: ' + ${blogContents['matter']}"></p>-->
+
+
+<!--        <h1 th:text="${hizukeRezult}"></h1>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!-- </html>-->
