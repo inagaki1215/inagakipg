@@ -23,6 +23,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'mysql:mysql-connector-java:8.0.20'
+	implementation 'com.vladsch.flexmark:flexmark-all:0.62.2'
 }
 
 test {

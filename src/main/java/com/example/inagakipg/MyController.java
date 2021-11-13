@@ -111,6 +111,23 @@ public class MyController {
             return "notfound";
         }
 
+
+
+
+
+    }
+
+    @GetMapping("/markdown")
+    public String getMarkdown(Model model) {
+        // create parser and renderer instance
+        Parser parser = Parser.builder().build();
+        HtmlRenderer renderer = HtmlRenderer.builder().build();
+        String markdown = "# hello\n## world\n![Fried Shrimp Triangle](http://imgur.com/Jjwsc.jpg \"Sample\")"
+        // convert to markdown to html
+        Node document = parser.parse(markdown);
+        String html = renderer.render(document);
+        model.addAttribute("html", html);
+        return "markdown";
     }
 
 
