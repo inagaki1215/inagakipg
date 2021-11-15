@@ -14,6 +14,9 @@
 
 </head>
 <body>
+
+
+
 <div id="blog" class="big-bg">
   <header class="page-header wrapper">
     <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="home"></a></h1>
@@ -33,21 +36,21 @@
 </div>
 
 <div class="news-contents wrapper">
+  [(${html})]
+<!--    <article th:each="blogContents : ${BlogContentData}">-->
+<!--      <header class="post-info" >-->
+<!--        <p class="post-title" th:text="${blogContents['thema']}"></p>-->
+<!--        <p class="post-date">3/30<span>2020</span></p>-->
+<!--      </header>-->
+<!--      <div>-->
+<!--        <p th:text="${blogContents['hizuke']}"></p>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <p th:text="${blogContents['matter']}"></p>-->
+<!--      </div>-->
 
-    <article th:each="blogContents : ${BlogContentData}">
-      <header class="post-info" >
-        <p class="post-title" th:text="${blogContents['thema']}"></p>
-        <p class="post-date">3/30<span>2020</span></p>
-      </header>
-      <div>
-        <p th:text="${blogContents['hizuke']}"></p>
-      </div>
-      <div>
-        <p th:text="${blogContents['matter']}"></p>
-      </div>
-
-      <div class="under-footer">
-      </div>
+<!--      <div class="under-footer">-->
+<!--      </div>-->
 
     </article>
 

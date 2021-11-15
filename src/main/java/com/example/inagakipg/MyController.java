@@ -1,6 +1,10 @@
 package com.example.inagakipg;
 
 
+import com.vladsch.flexmark.html.HtmlRenderer;
+import com.vladsch.flexmark.parser.Parser;
+import com.vladsch.flexmark.util.ast.Node;
+import com.vladsch.flexmark.util.sequence.BasedSequence;
 import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.context.annotation.EnableMBeanExport;
 import org.springframework.web.bind.annotation.*;
@@ -101,33 +105,30 @@ public class MyController {
     }
 
 
+//    @GetMapping("/bloglist/{hizuke}")
+//    public String getBlogHizuke(@PathVariable("hizuke") String hizuke, Model model) {
+//        List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select matter from blogdata where hizuke = ?", hizuke);
+//        if(selectHizuke.size() == 1){
+//            model.addAttribute("BlogContentData", selectHizuke);
+//            return "bloghizuke";
+//        }else {
+//            return "notfound";
+//        }
+
     @GetMapping("/bloglist/{hizuke}")
     public String getBlogHizuke(@PathVariable("hizuke") String hizuke, Model model) {
-        List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select * from blogdata where hizuke = ?", hizuke);
+        List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select matter from blogdata where hizuke = ?", hizuke);
         if(selectHizuke.size() == 1){
-            model.addAttribute("BlogContentData", selectHizuke);
+            Parser parser = Parser.builder().build();
+            HtmlRenderer renderer = HtmlRenderer.builder().build();
+            // convert to markdown to html
+            Node document = parser.parse(selectHizuke);
+            String html = renderer.render(document);
+            model.addAttribute("html", html);
             return "bloghizuke";
         }else {
             return "notfound";
         }
-
-
-
-
-
-    }
-
-    @GetMapping("/markdown")
-    public String getMarkdown(Model model) {
-        // create parser and renderer instance
-        Parser parser = Parser.builder().build();
-        HtmlRenderer renderer = HtmlRenderer.builder().build();
-        String markdown = "# hello\n## world\n![Fried Shrimp Triangle](http://imgur.com/Jjwsc.jpg \"Sample\")"
-        // convert to markdown to html
-        Node document = parser.parse(markdown);
-        String html = renderer.render(document);
-        model.addAttribute("html", html);
-        return "markdown";
     }
 
 
