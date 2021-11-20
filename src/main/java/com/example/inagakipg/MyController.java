@@ -118,15 +118,17 @@ public class MyController {
     @GetMapping("/bloglist/{hizuke}")
     public String getBlogHizuke(@PathVariable("hizuke") String hizuke, Model model) {
         List<Map<String, Object>> selectHizuke = jdbcTemplate.queryForList("select matter from blogdata where hizuke = ?", hizuke);
-        if(selectHizuke.size() == 1){
+        if (selectHizuke.size() == 1) {
+            Map<String, Object> selectHizukeFirst = selectHizuke.get(0);
             Parser parser = Parser.builder().build();
             HtmlRenderer renderer = HtmlRenderer.builder().build();
+            String markdown = selectHizukeFirst.get("matter").toString();
             // convert to markdown to html
-            Node document = parser.parse(selectHizuke);
+            Node document = parser.parse(markdown);
             String html = renderer.render(document);
             model.addAttribute("html", html);
             return "bloghizuke";
-        }else {
+        } else {
             return "notfound";
         }
     }

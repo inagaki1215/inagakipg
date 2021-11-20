@@ -1,32 +1,101 @@
 @charset "UTF-8";
 
+/*ヘッダー*/
+.header{
+background-image: url(/blog.png);
+background-color:green;
+background-size: cover;
+background-position: center top;
+
+}
+
+.page-header wrapper{
+background-color:red;
+}
+
+
+.title{
+ text-align: center;
+
+}
+
+.content-nav{
+    display: flex;
+    padding: 0;
+    margin: 0px;
+    list-style: none;
+    border-top: 1px solid #333;
+    border-left: 1px solid #333;
+}
+
+.content-nav li{
+    /*追加*/display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    /*削除text-align: center;*/
+    margin: 0;
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+.content-nav li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    /*liから移動*/padding: 10px;
+    color: white;
+}
+
+.content-nav a:hover{
+    color: 	#F172A3;
+}
+
+/*中身*/
+.wrapper{
+    background-color:orange;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%
+    margin-bottom: 50px;
+    margin-top: 70px;
+}
+
+
+/*記事*/
+
+
+/*サイドバー*/
+
+
+/*--------------------------------------------*/
+
 html{
     font-size: 100%;
 }
 
 body{
     font-family: "Yu Gothic Medium", "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
-    line-height: 1.7;
-    color: #432;
+    line-height: 1.7; /*文字の上下の余白*/
+    color: #432; /*全体の文字色*/
     margin: 0;
     padding: 0;
 }
 
-/*棒線をなくす*/
+
 a{
-    text-decoration: none;
+    text-decoration: none; /*棒線をなくす*/
 
 }
 
 /*画面の幅で表示*/
-img{
+/*img{
     max-width: 100%
+    height:auto;
 }
-
-.logo{
-    width: 210px;
-    margin-top: 14px;
-}
+*/
 
 .main-nav{
     display: flex;
@@ -45,12 +114,12 @@ img{
 }
 
 .main-nav a:hover{
-    color: #0bd;
+    color: 	#F172A3;
 }
 
 .page-header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*２つのdivを両端に表示*/
 }
 
 .wrapper{
@@ -96,7 +165,7 @@ img{
 
 
 #home{
-    background-image: url(/main.jpeg);
+    background-image: url(https://github.com/inagaki1215/inagaki-images/blob/master/blog%E7%94%BB%E5%83%8F/2021-11-18-inagakipg-main.jpeg?raw=true);
     min-height: 100vh;
 }
 
@@ -156,17 +225,6 @@ input[type="submit"] {
     border: none;
     cursor: pointer;
     line-height: 1;
-}
-
-/* blog
-------------------------------- */
-#blog {
-    background-image: url(/blog.jpeg);
-    height: 270px;
-    margin-bottom: 40px;
-}
-#blog .page-title {
-    text-align: center;
 }
 
 

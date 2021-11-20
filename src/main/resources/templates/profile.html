@@ -14,69 +14,112 @@
 
 </head>
 <body>
-<div id="blog" class="big-bg">
-    <header class="page-header wrapper">
-        <h1><a href="index.html"><img class="logo" src="images/logo.svg" alt="ベージ名"></a></h1>
-        <nav>
-            <ul class="main-nav">
-                <li><a th:href="@{/home}">Home</a></li>
-                <li><a th:href="@{/profile}">Profile</a></li>
-                <li><a th:href="@{/bloglist}">Blog</a></li>
-                <li><a th:href="@{/contactForm}">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="wrapper">
+<div class="header">
+    <div class="page-header wrapper">
+        <h1><a href="index.html">ブログ名</a></h1>
+    </div>
+    <div class="title">
         <h2 class="page-title">Profile</h2>
     </div>
 
+        <ul class="content-nav">
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/profile}">Profile</a></li>
+            <li><a th:href="@{/bloglist}">Blog</a></li>
+            <li><a th:href="@{/contactForm}">Contact</a></li>
+        </ul>
+</div><!--header -->
+
+<div class="main-contents wrapper">
+    <div class="article">
+        <div class="inside-article">
+            <h1 class="profileTitle">About</h1>
+            <p>Satomi</p>
+            <p>神奈川県出身</p>
+            <h1 class="profileTitle">Work</h1>
+            <p>〜診療放射線技師〜</p>
+            <p>総合病院にて３年間勤務後、フリーにて活動中です。</p>
+            <p>主にレントゲン撮影、CT撮影、マンモグラフィーの経験があります。</p>
+            <p>〜エンジニア〜</p>
+            <p>2022年よりSESとして都内に勤務しています。将来は、医療分野での経験を活かしたアプリケーション開発をしたいと思っています。</p>
+            <h1 class="profileTitle">Hobby</h1>
+            <p>〜ニューヨーク〜</p>
+            <p>人生を変えてくれたパワースポットです。詳しくは<a href="blog.html">ブログ</a>まで。</p>
+            <p>〜ソフトボール(野球)〜</p>
+            <p>中学時代にソフトボール部に所属していました。今は社会人チームでキャッチャーとしてプレーしています。野球も好きで、甲子園、プロ野球、メジャーリーグまで観戦しにいきます。詳しくは<a href="blog.html">ブログ</a>まで。</p>
+            </p>
+        </div>
+    </div>
+    <div class="side-bar">
+        <div class="category">
+            <h3 class="sub-title">カテゴリー</h3>
+            <ul class="sub-menu">
+                <li><a href="#">intelliJ</a></li>
+                <li><a href="#">Spring Initializr</a></li>
+                <li><a href="#">Soercetree</a></li>
+                <li><a href="#">github</a></li>
+            </ul>
+        </div>
+        <div class="archive">
+            <h3 class="sub-title">アーカイブ</h3>
+            <ul class="sub-menu">
+                <li><a href="#">2021/11 (1)</a></li>
+                <li><a href="#">2021/12 (1)</a></li>
+                <li><a href="#">2022/1 (1)</a></li>
+                <li><a href="#">2021/2 (1)</a></li>
+                <li><a href="#">2021/3 (1)</a></li>
+                <li><a href="#">2021/4 (1)</a></li>
+            </ul>
+        </div>
+
+    </div>
 </div>
 
-<div class="news-contents wrapper">
-    <article>
-        <img src="profileMain.jpeg" alt="プロフィール">
-        <h1 class="profileTitle">About</h1>
-        <p>Satomi</p>
-        <p>神奈川県出身</p>
-        <h1 class="profileTitle">Work</h1>
-        <p>〜診療放射線技師〜</p>
-        <p>総合病院にて３年間勤務後、フリーにて活動中です。</p>
-        <p>主にレントゲン撮影、CT撮影、マンモグラフィーの経験があります。</p>
-        <p>〜エンジニア〜</p>
-        <p>2022年よりSESとして都内に勤務しています。将来は、医療分野での経験を活かしたアプリケーション開発をしたいと思っています。</p>
-        <h1 class="profileTitle">Hobby</h1>
-        <p>〜ニューヨーク〜</p>
-        <p>人生を変えてくれたパワースポットです。詳しくは<a href="blog.html">ブログ</a>まで。</p>
-        <p>〜ソフトボール(野球)〜</p>
-        <p>中学時代にソフトボール部に所属していました。今は社会人チームでキャッチャーとしてプレーしています。野球も好きで、甲子園、プロ野球、メジャーリーグまで観戦しにいきます。詳しくは<a href="blog.html">ブログ</a>まで。</p>
-        </p>
-    </article>
 
-    <aside>
-        <h3 class="sub-title">カテゴリー</h3>
-        <ul class="sub-menu">
-            <li><a href="#">intelliJ</a></li>
-            <li><a href="#">Spring Initializr</a></li>
-            <li><a href="#">Soercetree</a></li>
-            <li><a href="#">github</a></li>
-        </ul>
+<!--<div class="news-contents wrapper">-->
+<!--    <article>-->
+<!--&lt;!&ndash;        <img src="profileMain.jpeg" alt="プロフィール">&ndash;&gt;-->
+<!--        <h1 class="profileTitle">About</h1>-->
+<!--        <p>Satomi</p>-->
+<!--        <p>神奈川県出身</p>-->
+<!--        <h1 class="profileTitle">Work</h1>-->
+<!--        <p>〜診療放射線技師〜</p>-->
+<!--        <p>総合病院にて３年間勤務後、フリーにて活動中です。</p>-->
+<!--        <p>主にレントゲン撮影、CT撮影、マンモグラフィーの経験があります。</p>-->
+<!--        <p>〜エンジニア〜</p>-->
+<!--        <p>2022年よりSESとして都内に勤務しています。将来は、医療分野での経験を活かしたアプリケーション開発をしたいと思っています。</p>-->
+<!--        <h1 class="profileTitle">Hobby</h1>-->
+<!--        <p>〜ニューヨーク〜</p>-->
+<!--        <p>人生を変えてくれたパワースポットです。詳しくは<a href="blog.html">ブログ</a>まで。</p>-->
+<!--        <p>〜ソフトボール(野球)〜</p>-->
+<!--        <p>中学時代にソフトボール部に所属していました。今は社会人チームでキャッチャーとしてプレーしています。野球も好きで、甲子園、プロ野球、メジャーリーグまで観戦しにいきます。詳しくは<a href="blog.html">ブログ</a>まで。</p>-->
+<!--        </p>-->
+<!--    </article>-->
 
-        <h3 class="sub-title">アーカイブ</h3>
-        <ul class="sub-menu">
-            <li><a href="#">2021/11 (1)</a></li>
-            <li><a href="#">2021/12 (1)</a></li>
-            <li><a href="#">2022/1 (1)</a></li>
-            <li><a href="#">2021/2 (1)</a></li>
-            <li><a href="#">2021/3 (1)</a></li>
-            <li><a href="#">2021/4 (1)</a></li>
-        </ul>
-    </aside>
+<!--    <aside>-->
+<!--        <h3 class="sub-title">カテゴリー</h3>-->
+<!--        <ul class="sub-menu">-->
+<!--            <li><a href="#">intelliJ</a></li>-->
+<!--            <li><a href="#">Spring Initializr</a></li>-->
+<!--            <li><a href="#">Soercetree</a></li>-->
+<!--            <li><a href="#">github</a></li>-->
+<!--        </ul>-->
 
-    <!-- <div class="ad">
-        <img src="images/banner.jpg" alt="新メニュー登場">
-    </div> -->
-</div>
+<!--        <h3 class="sub-title">アーカイブ</h3>-->
+<!--        <ul class="sub-menu">-->
+<!--            <li><a href="#">2021/11 (1)</a></li>-->
+<!--            <li><a href="#">2021/12 (1)</a></li>-->
+<!--            <li><a href="#">2022/1 (1)</a></li>-->
+<!--            <li><a href="#">2021/2 (1)</a></li>-->
+<!--            <li><a href="#">2021/3 (1)</a></li>-->
+<!--            <li><a href="#">2021/4 (1)</a></li>-->
+<!--        </ul>-->
+<!--    </aside>-->
 
+<!--    &lt;!&ndash; <div class="ad">-->
+<!--        <img src="images/banner.jpg" alt="新メニュー登場">-->
+<!--    </div> &ndash;&gt;-->
+<!--</div>-->
 
 
 <footer>
